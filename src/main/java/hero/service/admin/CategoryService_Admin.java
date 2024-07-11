@@ -12,4 +12,5 @@ public interface CategoryService_Admin {
     Category_Admin updateCategory(Long id, Category_Admin category);
     void deleteCategory(Long id);
     List<Category_Admin> getSubCategories(Long parentId);
+
 }

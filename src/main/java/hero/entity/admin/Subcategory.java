@@ -25,25 +25,8 @@ public class Subcategory {
         return id;
     }
 
-    @Override
-    public String toString() {
-        return "Subcategory{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", categoryId=" + categoryId +
-                ", category=" + category +
-                '}';
-    }
-
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Subcategory(Long id, String name, Long categoryId, Category_Admin category) {
-        this.id = id;
-        this.name = name;
-        this.categoryId = categoryId;
-        this.category = category;
     }
 
     public String getName() {
@@ -78,6 +61,4 @@ public class Subcategory {
         this.name = name;
         this.category = category;
     }
-
-
 }

@@ -32,7 +32,9 @@ public class WebSecurityConfiguration {
                         "/api/admin/signup", "/api/admin/login",
                                 "/api/admin/admins","/api/admin/admins/{id}",
                                 "/api/user/signup","/api/user/login","/api/admin/users",
-                                "/api/admin/users/{id}","/api/admin/products","/api/admin/products/subcategory/{subcategoryId}","/api/admin/products/{id}","/api/admin/products/products/{subcategoryId}"
+                                "/api/admin/users/{id}","/api/admin/products","/api/admin/products/subcategory/{subcategoryId}",
+                                "/api/admin/products/category/{categoryId}","/api/admin/products/category/{categoryId}/subcategory/{subcategoryId}",
+                                "/api/admin/products/{id}","/api/admin/products/products/{subcategoryId}"
                                 ,"/api/admin/categories","/api/admin/categories/{id}","/api/admin/categories/{categories}/subcategories","/api/admin/products/byCategory/{categoryId}",
                                 "/api/admin/categories/{categoryId}/products","/api/admin/orders/{id}","/api/admin/orders"
                                 ,"/api/analytics-fields","/api/analytics-fields/{id}","/api/admin/subcategories/category/{categoryId}","/api/admin/subcategories"

@@ -8,12 +8,7 @@ import java.util.Optional;
 public interface SubcategoryService {
     List<Subcategory> getSubcategoriesByCategoryId(Long categoryId);
 
-
-        Optional<Subcategory> findById(Long id);
-
-
-//    Subcategory createSubcategory(Subcategory subcategory);
-
+    Optional<Subcategory> findById(Long id);
     List<Subcategory> getAllSubcategories();
 
     Subcategory getSubcategoryById(Long id);

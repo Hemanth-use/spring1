@@ -1,7 +1,6 @@
 package hero.entity.admin;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import hero.entity.admin.ProductImage_Admin;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -17,11 +16,51 @@ public class Products_Admin {
     @Column(nullable = false, unique = true)
     private String name;
 
-
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "subcategory_id")
     private Subcategory subcategory;
 
+    public Products_Admin() {
+    }
+
+    @Override
+    public String toString() {
+        return "Products_Admin{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", subcategory=" + subcategory +
+                ", category=" + category +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", stock=" + stock +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", size='" + size + '\'' +
+                ", rating=" + rating +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", images=" + images +
+                '}';
+    }
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "category_id")
+    private Category_Admin category;
+
+    public Products_Admin(Long id, String name, Subcategory subcategory, Category_Admin category, String description, BigDecimal price, Integer stock, String brand, String model, String size, Integer rating, String imageUrl, Set<ProductImage_Admin> images) {
+        this.id = id;
+        this.name = name;
+        this.subcategory = subcategory;
+        this.category = category;
+        this.description = description;
+        this.price = price;
+        this.stock = stock;
+        this.brand = brand;
+        this.model = model;
+        this.size = size;
+        this.rating = rating;
+        this.imageUrl = imageUrl;
+        this.images = images;
+    }
 
     @Column(nullable = false)
     private String description;
@@ -51,9 +90,6 @@ public class Products_Admin {
     @JsonIgnore
     private Set<ProductImage_Admin> images;
 
-    public Products_Admin() {
-    }
-
     // Getters and setters...
 
     public Long getId() {
@@ -78,6 +114,14 @@ public class Products_Admin {
 
     public void setSubcategory(Subcategory subcategory) {
         this.subcategory = subcategory;
+    }
+
+    public Category_Admin getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category_Admin category) {
+        this.category = category;
     }
 
     public String getDescription() {
