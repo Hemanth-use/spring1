@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoryService_AdminImpl implements CategoryService_Admin {
@@ -26,11 +27,11 @@ public class CategoryService_AdminImpl implements CategoryService_Admin {
         return categoryRepositoryAdmin.findAll();
     }
 
-//    @Override
-//    public Category_Admin getCategoryById(Long id) {
-//
-//        return categoryRepositoryAdmin.findById(id).orElse(null);
-//    }
+    @Override
+    public Category_Admin findById(Long id) {
+
+        return categoryRepositoryAdmin.findById(id).orElse(null);
+    }
     @Override
     public Category_Admin getCategoryById(Long id) {
         Category_Admin categoryAdmin = categoryRepositoryAdmin.findById(id).orElse(null);
@@ -38,12 +39,6 @@ public class CategoryService_AdminImpl implements CategoryService_Admin {
             Hibernate.initialize(categoryAdmin.getSubCategories());
         }
         return categoryAdmin;
-    }
-
-
-    @Override
-    public Category_Admin findById(Long id) {
-        return null;
     }
 
     @Override
