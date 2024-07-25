@@ -20,6 +20,8 @@ public class AnalyticsFieldController {
         return analyticsFieldService.getAllAnalyticsFields();
     }
 
+
+
     @GetMapping("/{id}")
     public ResponseEntity<AnalyticsField> getFieldById(@PathVariable Long id) {
         AnalyticsField field = analyticsFieldService.getAnalyticsFieldById(id);
