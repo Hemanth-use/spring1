@@ -45,13 +45,13 @@ public class ProductController_Admin {
             @RequestBody Products_Admin product) {
         try {
             Optional<Category_Admin> categoryOptional = Optional.ofNullable(categoryService.findById(categoryId));
-            if (!categoryOptional.isPresent()) {
+            if (categoryOptional.isEmpty()) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
             }
             Category_Admin category = categoryOptional.get();
 
             Optional<Subcategory> subcategoryOptional = subcategoryService.findById(subcategoryId);
-            if (!subcategoryOptional.isPresent()) {
+            if (subcategoryOptional.isEmpty()) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
             }
             Subcategory subcategory = subcategoryOptional.get();

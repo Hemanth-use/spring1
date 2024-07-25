@@ -29,7 +29,7 @@ public class WebSecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(req -> req.requestMatchers(
-                        "/api/admin/signup", "/api/admin/login",
+                                "/api/admin/signup", "/api/admin/login",
                                 "/api/admin/admins","/api/admin/admins/{id}",
                                 "/api/user/signup","/api/user/login","/api/admin/users",
                                 "/api/admin/users/{id}","/api/admin/products","/api/admin/products/subcategory/{subcategoryId}",
